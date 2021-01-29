@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5521ca09-0630-41bd-be92-af4086431eb5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/user/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/common/config.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/common/mysql.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/common/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/domain/repository/user_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/user/domain/repository/user_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/domain/service/user_data_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/user/domain/service/user_data_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/handler/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/user/handler/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/user/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/category/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +19,7 @@
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/user" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />

@@ -1,23 +1,3 @@
-# Category Service
-
-This is the Category service
-
-Generated with
-
-```
-micro new category
-```
-
-## Usage
-
-Generate the proto code
-
-```
-make proto
-```
-
-Run the service
-
-```
-micro run .
-```
+# category service
+## 说明
+category主要用于对库存中的物品进行信息的一个归类，例如有手机、平板、笔记本的众多电子设备。此模块主要用于对这些设备起一个辅助管理的作用。采用微服务架构进行开发，方便后续继续开发。
