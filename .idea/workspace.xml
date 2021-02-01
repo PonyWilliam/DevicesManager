@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5521ca09-0630-41bd-be92-af4086431eb5" name="Default Changelist" comment="" />
+    <list default="true" id="5521ca09-0630-41bd-be92-af4086431eb5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/md/images/consul1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md/images/golang1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/domain/model/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/domain/repository/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/domain/service/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/generate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/handler/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/micro.mu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/proto/product.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/proto/product.pb.micro.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/proto/product.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,12 +41,15 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1nQU72XUA5qu2sMK9OxucL1umFE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -36,7 +58,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -47,7 +69,7 @@
       <recent name="$PROJECT_DIR$/user" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build devices/user">
+  <component name="RunManager" selected="Go Build.go build devices/category">
     <configuration name="go build devices/category" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="temp" />
       <working_directory value="$PROJECT_DIR$" />
@@ -66,10 +88,20 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="temp" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/product/main.go" />
+      <package value="devices" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build devices/user" />
         <item itemvalue="Go Build.go build devices/category" />
+        <item itemvalue="Go Build.go build devices/user" />
+        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -87,6 +119,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

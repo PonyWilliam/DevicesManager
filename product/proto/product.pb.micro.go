@@ -42,9 +42,9 @@ func NewProductEndpoints() []*api.Endpoint {
 // Client API for Product service
 
 type ProductService interface {
-	AddProduct(ctx context.Context, in *ProductInfo, opts ...client.CallOption) (*ResponseProduct, error)
-	DelProduct(ctx context.Context, in *ProductID, opts ...client.CallOption) (*ResponseDelProduct, error)
-	ChangeProduct(ctx context.Context, in *ProductInfo, opts ...client.CallOption) (*ResponseProduct, error)
+	AddProduct(ctx context.Context, in *Request_ProductInfo, opts ...client.CallOption) (*Response_Product, error)
+	DelProduct(ctx context.Context, in *Request_ProductID, opts ...client.CallOption) (*Response_DelProduct, error)
+	ChangeProduct(ctx context.Context, in *Request_ProductInfo, opts ...client.CallOption) (*Response_Product, error)
 }
 
 type productService struct {
@@ -59,9 +59,9 @@ func NewProductService(name string, c client.Client) ProductService {
 	}
 }
 
-func (c *productService) AddProduct(ctx context.Context, in *ProductInfo, opts ...client.CallOption) (*ResponseProduct, error) {
+func (c *productService) AddProduct(ctx context.Context, in *Request_ProductInfo, opts ...client.CallOption) (*Response_Product, error) {
 	req := c.c.NewRequest(c.name, "Product.AddProduct", in)
-	out := new(ResponseProduct)
+	out := new(Response_Product)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -69,9 +69,9 @@ func (c *productService) AddProduct(ctx context.Context, in *ProductInfo, opts .
 	return out, nil
 }
 
-func (c *productService) DelProduct(ctx context.Context, in *ProductID, opts ...client.CallOption) (*ResponseDelProduct, error) {
+func (c *productService) DelProduct(ctx context.Context, in *Request_ProductID, opts ...client.CallOption) (*Response_DelProduct, error) {
 	req := c.c.NewRequest(c.name, "Product.DelProduct", in)
-	out := new(ResponseDelProduct)
+	out := new(Response_DelProduct)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -79,9 +79,9 @@ func (c *productService) DelProduct(ctx context.Context, in *ProductID, opts ...
 	return out, nil
 }
 
-func (c *productService) ChangeProduct(ctx context.Context, in *ProductInfo, opts ...client.CallOption) (*ResponseProduct, error) {
+func (c *productService) ChangeProduct(ctx context.Context, in *Request_ProductInfo, opts ...client.CallOption) (*Response_Product, error) {
 	req := c.c.NewRequest(c.name, "Product.ChangeProduct", in)
-	out := new(ResponseProduct)
+	out := new(Response_Product)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -92,16 +92,16 @@ func (c *productService) ChangeProduct(ctx context.Context, in *ProductInfo, opt
 // Server API for Product service
 
 type ProductHandler interface {
-	AddProduct(context.Context, *ProductInfo, *ResponseProduct) error
-	DelProduct(context.Context, *ProductID, *ResponseDelProduct) error
-	ChangeProduct(context.Context, *ProductInfo, *ResponseProduct) error
+	AddProduct(context.Context, *Request_ProductInfo, *Response_Product) error
+	DelProduct(context.Context, *Request_ProductID, *Response_DelProduct) error
+	ChangeProduct(context.Context, *Request_ProductInfo, *Response_Product) error
 }
 
 func RegisterProductHandler(s server.Server, hdlr ProductHandler, opts ...server.HandlerOption) error {
 	type product interface {
-		AddProduct(ctx context.Context, in *ProductInfo, out *ResponseProduct) error
-		DelProduct(ctx context.Context, in *ProductID, out *ResponseDelProduct) error
-		ChangeProduct(ctx context.Context, in *ProductInfo, out *ResponseProduct) error
+		AddProduct(ctx context.Context, in *Request_ProductInfo, out *Response_Product) error
+		DelProduct(ctx context.Context, in *Request_ProductID, out *Response_DelProduct) error
+		ChangeProduct(ctx context.Context, in *Request_ProductInfo, out *Response_Product) error
 	}
 	type Product struct {
 		product
@@ -114,14 +114,14 @@ type productHandler struct {
 	ProductHandler
 }
 
-func (h *productHandler) AddProduct(ctx context.Context, in *ProductInfo, out *ResponseProduct) error {
+func (h *productHandler) AddProduct(ctx context.Context, in *Request_ProductInfo, out *Response_Product) error {
 	return h.ProductHandler.AddProduct(ctx, in, out)
 }
 
-func (h *productHandler) DelProduct(ctx context.Context, in *ProductID, out *ResponseDelProduct) error {
+func (h *productHandler) DelProduct(ctx context.Context, in *Request_ProductID, out *Response_DelProduct) error {
 	return h.ProductHandler.DelProduct(ctx, in, out)
 }
 
-func (h *productHandler) ChangeProduct(ctx context.Context, in *ProductInfo, out *ResponseProduct) error {
+func (h *productHandler) ChangeProduct(ctx context.Context, in *Request_ProductInfo, out *Response_Product) error {
 	return h.ProductHandler.ChangeProduct(ctx, in, out)
 }

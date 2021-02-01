@@ -1,4 +1,4 @@
-package repositry
+package repository
 
 import (
 	"devices/product/domain/model"
@@ -13,7 +13,7 @@ type IProduct interface {
 	FindProductByID(ID int64)(*model.Product,error)
 	FindProductByName(name string)(product []model.Product,err error)
 	FindProductByArea(area string)(product []model.Product,err error)
-	FindProductByCustom(custom string)(product []model.Product,err error)
+	FindProductByCustom(custom int64)(product []model.Product,err error)
 	FindProductByStay(is bool)(product []model.Product,err error)
 	FindProductByImportant(is bool)(product []model.Product,err error)
 }
@@ -48,7 +48,7 @@ func(p *ProductRepository) FindProductByName(name string)(product []model.Produc
 func(p *ProductRepository) FindProductByArea(area string)(product []model.Product,err error){
 	return product,p.mysql.Where("BelongArea = ?",area).Find(product).Error
 }
-func(p *ProductRepository) FindProductByCustom(custom string)(product []model.Product,err error){
+func(p *ProductRepository) FindProductByCustom(custom int64)(product []model.Product,err error){
 	return product,p.mysql.Where("BelongCustom = ?",custom).Find(product).Error
 }
 func(p *ProductRepository) FindProductByStay(is bool)(product []model.Product,err error){
