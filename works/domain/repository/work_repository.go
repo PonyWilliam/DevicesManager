@@ -1,1 +1,46 @@
 package repository
+
+import (
+	"devices/works/domain/model"
+	"github.com/jinzhu/gorm"
+)
+
+type IWorker interface {
+	InitTable() error
+	CreateWorker(workers *model.Workers) (int64,error)
+	UpdateWorker(workers *model.Workers) (int64,error)
+	DeleteWorkerByID(int64) error
+	FindWorkerByID(int64)(model.Workers,error)
+	FindWorkersByName(string)([]model.Workers,error)
+	FindAll()([]model.Workers,error)
+}
+func NewWorkerRepository(db *gorm.DB)IWorker{
+	return &WorkersRepository{mysqlDB: db}
+}
+type WorkersRepository struct{
+	mysqlDB *gorm.DB
+}
+func (w *WorkersRepository) InitTable() error{
+	if w.mysqlDB.HasTable(&model.Workers{}){
+		return nil
+	}
+	return w.mysqlDB.Create(&model.Workers{}).Error
+}
+func (w *WorkersRepository) CreateWorker(workers *model.Workers) (int64,error){
+	return workers.ID,w.mysqlDB.Model(workers).Create(&workers).Error
+}
+func (w *WorkersRepository) UpdateWorker(workers *model.Workers) (int64,error){
+	return workers.ID,w.mysqlDB.Model(workers).Create(&workers).Error
+}
+func (w *WorkersRepository) DeleteWorkerByID(id int64) error{
+	return w.mysqlDB.Where("id = ?",id).Delete(&model.Workers{}).Error
+}
+func (w *WorkersRepository) FindWorkerByID(id int64) (worker model.Workers,err error){
+	return worker,w.mysqlDB.Model(&model.Workers{}).Where("id  = ?",id).Find(&worker).Error
+}
+func (w *WorkersRepository) FindWorkersByName(name string) (workers []model.Workers,err error){
+	return workers,w.mysqlDB.Model(&model.Workers{}).Where("name  = ?",name).Find(&workers).Error
+}
+func (w *WorkersRepository) FindAll() (workers []model.Workers,err error){
+	return workers,w.mysqlDB.Model(&model.Workers{}).Find(workers).Error
+}

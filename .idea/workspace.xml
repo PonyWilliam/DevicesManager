@@ -2,68 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5521ca09-0630-41bd-be92-af4086431eb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/borrow/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/domain/model/product_log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/domain/model/work_log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/generate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/handler/borrow.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/micro.mu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/proto/borrow.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/proto/borrow.pb.micro.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/borrow/proto/borrow.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/model/device_area.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/model/storage.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/swap.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/generate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/handler/device.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/micro.mu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device/proto/device.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/generate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/handler/enter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/micro.mu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enter/proto/enter.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/generate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/handler/manager.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/micro.mu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/proto/manager.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/domain/model/work.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/domain/repository/work_repository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/domain/server/work_server.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/generate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/handler/works.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/micro.mu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/proto/works.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/common/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/borrow/domain/model/work_log.go" beforeDir="false" afterPath="$PROJECT_DIR$/borrow/domain/model/work_log.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/works/domain/model/work.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/domain/model/work.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/works/domain/repository/work_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/domain/repository/work_repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/works/go.mod" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
