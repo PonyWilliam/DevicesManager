@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5521ca09-0630-41bd-be92-af4086431eb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/works/proto/works.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/works/proto/works.pb.micro.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/works/domain/model/work.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/domain/model/work.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/works/domain/repository/work_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/domain/repository/work_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/works/domain/server/work_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/domain/server/work_server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/works/handler/works.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/handler/works.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/works/proto/works.proto" beforeDir="false" afterPath="$PROJECT_DIR$/works/proto/works.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +19,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -44,11 +40,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable..is.expanded" value="false" />
+    <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -117,5 +115,6 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+    <auto-vendoring-mode>false</auto-vendoring-mode>
   </component>
 </project>
