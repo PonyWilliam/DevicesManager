@@ -24,7 +24,7 @@ func (w *WorkersRepository) InitTable() error{
 	if w.mysqlDB.HasTable(&model.Workers{}){
 		return nil
 	}
-	return w.mysqlDB.Create(&model.Workers{}).Error
+	return w.mysqlDB.CreateTable(&model.Workers{}).Error
 }
 func (w *WorkersRepository) CreateWorker(worker *model.Workers) (int64,error){
 	return worker.ID,w.mysqlDB.Model(worker).Create(&worker).Error

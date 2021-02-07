@@ -9,9 +9,8 @@ import (
 )
 
 type Works struct{
-	workService work.WorkServices
+	WorkService work.IWorkerServices
 }
-
 // Call is a single request handler called via client.Call or the generated client code
 func(w *Works)CreateWorker(ctx context.Context,req *works.Request_Workers,res *works.Response_CreateWorker)error{
 	workers := &model.Workers{}
@@ -20,7 +19,7 @@ func(w *Works)CreateWorker(ctx context.Context,req *works.Request_Workers,res *w
 		res.Message = err.Error()
 		return err
 	}
-	id,err := w.workService.CreateWorker(workers)
+	id,err := w.WorkService.CreateWorker(workers)
 	if err != nil{
 		res.Message = err.Error()
 		return err
@@ -36,7 +35,7 @@ func(w *Works)UpdateWorker(ctx context.Context,req *works.Request_Workers,res *w
 		res.Message = err.Error()
 		return err
 	}
-	id,err := w.workService.CreateWorker(workers)
+	id,err := w.WorkService.CreateWorker(workers)
 	if err != nil{
 		res.Message = err.Error()
 		return err
@@ -46,7 +45,7 @@ func(w *Works)UpdateWorker(ctx context.Context,req *works.Request_Workers,res *w
 	return nil
 }
 func(w *Works)DeleteWorkerByID(ctx context.Context,req *works.Request_Workers_ID,res *works.Response_Workers)error{
-	err := w.workService.DeleteWorkerByID(req.Id)
+	err := w.WorkService.DeleteWorkerByID(req.Id)
 	if err!=nil{
 		res.Message = err.Error()
 		return err
@@ -55,8 +54,8 @@ func(w *Works)DeleteWorkerByID(ctx context.Context,req *works.Request_Workers_ID
 	return nil
 }
 func(w *Works)FindWorkerByID(ctx context.Context,req *works.Request_Workers_ID,res *works.Response_Worker_Show)error{
-	worker,err := w.workService.FindWorkerByID(req.Id)
-	if err != nil{
+	worker,err := w.WorkService.FindWorkerByID(req.Id)
+	if err!=nil{
 		return err
 	}
 	err = common.SwapTo(res.Worker, worker)
@@ -66,7 +65,7 @@ func(w *Works)FindWorkerByID(ctx context.Context,req *works.Request_Workers_ID,r
 	return nil
 }
 func(w *Works)FindWorkerByName(ctx context.Context,req *works.Request_Workers_Name,res *works.Response_Workers_Show)error{
-	worker,err := w.workService.FindWorkersByName(req.Name)
+	worker,err := w.WorkService.FindWorkersByName(req.Name)
 	if err != nil{
 		return err
 	}
@@ -77,7 +76,7 @@ func(w *Works)FindWorkerByName(ctx context.Context,req *works.Request_Workers_Na
 	return nil
 }
 func(w *Works)FindAll(ctx context.Context,req *works.Request_Null,res *works.Response_Workers_Show)error{
-	worker,err := w.workService.FindAll()
+	worker,err := w.WorkService.FindAll()
 	if err != nil{
 		return err
 	}

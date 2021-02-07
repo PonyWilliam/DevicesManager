@@ -1,25 +1,67 @@
 package main
 
 import (
-	"works/handler"
-	pb "works/proto"
-
-	"github.com/micro/micro/v3/service"
-	"github.com/micro/micro/v3/service/logger"
+	"devices/common"
+	"devices/works/domain/repository"
+	services2 "devices/works/domain/server"
+	"devices/works/handler"
+	works "devices/works/proto"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
+	"github.com/micro/go-micro/v2"
+	"github.com/micro/go-micro/v2/registry"
+	"github.com/micro/go-micro/v2/util/log"
+	"github.com/micro/go-plugins/registry/consul/v2"
+	ratelimit "github.com/micro/go-plugins/wrapper/ratelimiter/uber/v2"
+	"strconv"
+	"time"
 )
-
-func main() {
-	// Create service
-	srv := service.New(
-		service.Name("works"),
-		service.Version("latest"),
+var QPS = 100
+func NewServices(name string) {
+	consulConfig,err := common.GetConsualConfig("127.0.0.1",8500,"/micro/config")
+	//配置中心
+	if err != nil{
+		log.Fatal(err)
+	}
+	//注册中心
+	consulRegistry := consul.NewRegistry(
+		func(options *registry.Options){
+			options.Addrs = []string{"127.0.0.1"}
+			options.Timeout = time.Second * 10
+		},
 	)
 
-	// Register handler
-	pb.RegisterWorksHandler(srv.Server(), new(handler.Works))
+	srv := micro.NewService(
+		micro.Name("services.works"),
+		micro.Version("latest"),
+		micro.Address("127.0.0.1:8083"),
+		micro.Registry(consulRegistry),
+		micro.WrapHandler(ratelimit.NewHandlerWrapper(QPS)),
+	)
+	mysqlInfo := common.GetMysqlFromConsul(consulConfig,"mysql")
+	db,err := gorm.Open("mysql",
+		mysqlInfo.User+":"+mysqlInfo.Pwd+"@tcp("+mysqlInfo.Host + ":"+ strconv.FormatInt(mysqlInfo.Port,10) +")/"+mysqlInfo.DataBase+"?charset=utf8&parseTime=True&loc=Local",
+	)
+	if err != nil{
+		log.Error(err)
 
-	// Run service
-	if err := srv.Run(); err != nil {
-		logger.Fatal(err)
+	}
+	defer db.Close()
+	db.SingularTable(true)
+	srv.Init()
+	rp := repository.NewWorkerRepository(db)
+	err =rp.InitTable()
+	if err!=nil{
+		err := rp.InitTable()
+		if err!=nil{
+			log.Error(err)
+		}
+	}
+
+	WorkServices := services2.NewWorkerServices(repository.NewWorkerRepository(db))
+	err = works.RegisterWorksHandler(srv.Server(),&handler.Works{WorkService:WorkServices})
+
+	if err:=srv.Run();err!=nil{
+		log.Fatal(err)
 	}
 }
