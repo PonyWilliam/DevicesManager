@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5521ca09-0630-41bd-be92-af4086431eb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/works/handler/works.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/handler/works.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +55,7 @@
       <recent name="$PROJECT_DIR$/user" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build devices/category">
+  <component name="RunManager" selected="Go Build.go build devices/user">
     <configuration name="go build devices/category" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="temp" />
       <working_directory value="$PROJECT_DIR$" />
@@ -88,8 +85,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build devices/category" />
         <item itemvalue="Go Build.go build devices/user" />
+        <item itemvalue="Go Build.go build devices/category" />
         <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
