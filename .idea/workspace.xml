@@ -2,23 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5521ca09-0630-41bd-be92-af4086431eb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/worksApi/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/generate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/handler/worksApi.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/micro.mu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/proto/worksApi.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/proto/worksApi.pb.micro.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worksApi/proto/worksApi.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/.idea/workApi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/client/workApi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/generate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/handler/workApi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/plugin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/proto/workApi/workApi.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/proto/workApi/workApi.pb.micro.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workApi/proto/workApi/workApi.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/.idea/worksApi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/micro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksApi/plugin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/borrow/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/borrow/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/works/domain/repository/work_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/domain/repository/work_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/works/handler/works.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/handler/works.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/works/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/works/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/works/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/works/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worksApi/handler/worksApi.go" beforeDir="false" afterPath="$PROJECT_DIR$/worksApi/handler/worksApi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worksApi/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/worksApi/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worksApi/proto/worksApi.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/worksApi/proto/worksApi.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worksApi/proto/worksApi.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/worksApi/proto/worksApi.pb.micro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worksApi/proto/worksApi.proto" beforeDir="false" afterPath="$PROJECT_DIR$/worksApi/proto/worksApi.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +55,7 @@
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/works" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -59,7 +80,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="go.sdk" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -71,25 +92,7 @@
       <recent name="$PROJECT_DIR$/user" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build devices/worksApi">
-    <configuration name="go build devices/category" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="temp" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/category/main.go" />
-      <package value="devices/category" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build devices/user" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="temp" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/user/main.go" />
-      <package value="devices/user" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build worksApi">
     <configuration name="go build devices/works" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="temp" />
       <working_directory value="$PROJECT_DIR$" />
@@ -108,22 +111,40 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="temp" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/product/main.go" />
+      <filePath value="$PROJECT_DIR$/works/main.go" />
+      <package value="devices" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build worksApi" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="temp" />
+      <working_directory value="$PROJECT_DIR$/worksApi" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/worksApi/main.go" />
+      <package value="worksApi" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build worksApi.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="temp" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/worksApi/handler/worksApi.go" />
       <package value="devices" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build worksApi" />
+        <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build devices/worksApi" />
         <item itemvalue="Go Build.go build devices/works" />
-        <item itemvalue="Go Build.go build devices/user" />
-        <item itemvalue="Go Build.go build devices/category" />
-        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build worksApi.go" />
       </list>
     </recent_temporary>
   </component>

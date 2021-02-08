@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"devices/works/domain/model"
+	"works/domain/model"
 	"github.com/jinzhu/gorm"
 )
 

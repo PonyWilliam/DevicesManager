@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="333c3ff3-1606-4f57-869f-a9d57833227e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../workApi/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/.idea/workApi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/client/workApi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/generate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/handler/workApi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/plugin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/proto/workApi/workApi.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/proto/workApi/workApi.pb.micro.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workApi/proto/workApi/workApi.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/works.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/worksApi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/micro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../borrow/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../borrow/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/domain/repository/work_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/domain/repository/work_repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/domain/server/work_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/domain/server/work_server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/handler/works.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/handler/works.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/worksApi.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/worksApi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/worksApi.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/worksApi.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/worksApi.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/worksApi.pb.micro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/worksApi.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/worksApi.proto" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1oBQuTR8OVFuQIzEJZw4HRDwtLS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="worksApi" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="worksApi" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build worksApi.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="worksApi" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/handler/worksApi.go" />
+      <package value="worksApi" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build worksApi.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

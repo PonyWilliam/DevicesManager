@@ -1,12 +1,11 @@
 syntax = "proto3";
-package worksApi;
-option go_package = "proto;worksApi";
-service WorksApi{
-	rpc FindAll(Request)	returns(Response);
+package go.micro.api.workApi;
+service WorkApi{
+	rpc FindAll(Request)	returns(Response){};
 }
 message Pair{
 	string key = 1;
-	repeated string value = 2;
+	repeated string values = 2;
 }
 message Request{
 	string method = 1;

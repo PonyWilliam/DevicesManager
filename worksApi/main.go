@@ -2,20 +2,20 @@ package main
 
 import (
 	"context"
-	go_worker_services "devices/works/proto"
-	"devices/worksApi/handler"
-	worksApi "devices/worksApi/proto"
 	"fmt"
+	go_worker_services "github.com/PonyWilliam/go-works/proto"
 	"github.com/afex/hystrix-go/hystrix"
 	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-micro/v2/client"
+	log "github.com/micro/go-micro/v2/logger"
 	"github.com/micro/go-micro/v2/registry"
 	consul2 "github.com/micro/go-plugins/registry/consul/v2"
 	"github.com/micro/go-plugins/wrapper/select/roundrobin/v2"
-	log "github.com/micro/micro/v3/service/logger"
 	"net"
 	"net/http"
 	"time"
+	"worksApi/handler"
+	worksApi "worksApi/proto"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 		}
 	 }()
 	services := micro.NewService(
-		micro.Name("server.api.worksApi"),
+		micro.Name("go.micro.api.workApi"),
 		micro.Version("latest"),
 		micro.Address("0.0.0.0:8085"),
 		micro.Registry(consul),
@@ -45,8 +45,8 @@ func main() {
 
 	)
 	services.Init()
-	workerServices := go_worker_services.NewWorksService("services.works",services.Client())
-	if err:=worksApi.RegisterWorksApiHandler(services.Server(),&handler.WorksApi{WorksServices: workerServices});err!=nil{
+	workerServices := go_worker_services.NewWorksService("go.micro.service.works",services.Client())
+	if err:=worksApi.RegisterWorkApiHandler(services.Server(),&handler.WorkApi{WorksServices: workerServices});err!=nil{
 		log.Error(err)
 	}
 

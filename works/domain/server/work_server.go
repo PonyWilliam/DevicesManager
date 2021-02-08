@@ -1,8 +1,8 @@
 package server
 
 import (
-	"devices/works/domain/model"
-	"devices/works/domain/repository"
+	"works/domain/model"
+	"works/domain/repository"
 )
 
 type IWorkerServices interface {

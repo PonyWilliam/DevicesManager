@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="53def0e7-001b-412e-b56e-624d69420154" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../examples" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workApi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/workApi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/workApi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/workApi/workApi.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/workApi/workApi.pb.micro.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/workApi/workApi.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/works.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../works/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/.idea/worksApi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/micro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../worksApi/plugin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../borrow/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../borrow/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/domain/repository/work_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/domain/repository/work_repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/domain/server/work_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/domain/server/work_server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/handler/works.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/handler/works.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../works/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../works/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../worksApi/handler/worksApi.go" beforeDir="false" afterPath="$PROJECT_DIR$/../worksApi/handler/worksApi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../worksApi/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../worksApi/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../worksApi/proto/worksApi.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/../worksApi/proto/worksApi.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../worksApi/proto/worksApi.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/../worksApi/proto/worksApi.pb.micro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../worksApi/proto/worksApi.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../worksApi/proto/worksApi.proto" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1oBq2tp2wDnK5cHu4gz8HLiE6Nc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="workApi" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="workApi" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build workApi" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="workApi" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="workApi" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build workApi" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

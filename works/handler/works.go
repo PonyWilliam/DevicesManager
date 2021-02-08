@@ -2,10 +2,10 @@ package handler
 
 import (
 	"context"
-	"devices/common"
-	"devices/works/domain/model"
-	work "devices/works/domain/server"
-	works "devices/works/proto"
+	common "github.com/PonyWilliam/go-common"
+	"works/domain/model"
+	work "works/domain/server"
+	works "works/proto"
 )
 
 type Works struct{

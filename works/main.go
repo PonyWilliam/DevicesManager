@@ -1,11 +1,7 @@
 package main
 
 import (
-	"devices/common"
-	"devices/works/domain/repository"
-	services2 "devices/works/domain/server"
-	"devices/works/handler"
-	works "devices/works/proto"
+	common "github.com/PonyWilliam/go-common"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/micro/go-micro/v2"
@@ -15,9 +11,13 @@ import (
 	ratelimit "github.com/micro/go-plugins/wrapper/ratelimiter/uber/v2"
 	"strconv"
 	"time"
+	"works/domain/repository"
+	services2 "works/domain/server"
+	"works/handler"
+	works "works/proto"
 )
 var QPS = 100
-func NewServices(name string) {
+func main() {
 	consulConfig,err := common.GetConsualConfig("127.0.0.1",8500,"/micro/config")
 	//配置中心
 	if err != nil{
@@ -32,7 +32,7 @@ func NewServices(name string) {
 	)
 
 	srv := micro.NewService(
-		micro.Name("services.works"),
+		micro.Name("go.micro.service.works"),
 		micro.Version("latest"),
 		micro.Address("127.0.0.1:8083"),
 		micro.Registry(consulRegistry),
