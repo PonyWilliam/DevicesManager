@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/examples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/micro" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/user" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workApi/examples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/works" vcs="Git" />
   </component>
 </project>

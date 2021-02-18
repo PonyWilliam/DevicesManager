@@ -8,23 +8,20 @@ import (
 	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-micro/v2/client"
 	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/registry"
-	consul2 "github.com/micro/go-plugins/registry/consul/v2"
 	"github.com/micro/go-plugins/wrapper/select/roundrobin/v2"
 	"net"
 	"net/http"
-	"time"
 	"worksApi/handler"
 	worksApi "worksApi/proto"
 )
 
 func main() {
-	consul := consul2.NewRegistry(
+	/*consul := consul2.NewRegistry(
 		func(options *registry.Options) {
 			options.Timeout = time.Second * 10
 			options.Addrs = []string{"127.0.0.1:8500"}
 		},
-	)
+	)*/
 	hystrixStreamHandler := hystrix.NewStreamHandler()//创建熔断器
 	hystrixStreamHandler.Start()
 	 go func() {
@@ -37,7 +34,7 @@ func main() {
 		micro.Name("go.micro.api.workApi"),
 		micro.Version("latest"),
 		micro.Address("0.0.0.0:8085"),
-		micro.Registry(consul),
+		//micro.Registry(consul),
 		//添加熔断
 		micro.WrapClient(NewClientHystrixWrapper()),
 		//添加负载均衡

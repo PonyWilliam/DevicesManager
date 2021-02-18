@@ -42,9 +42,9 @@ func NewBorrowEndpoints() []*api.Endpoint {
 // Client API for Borrow service
 
 type BorrowService interface {
-	Call(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
-	Stream(ctx context.Context, in *StreamingRequest, opts ...client.CallOption) (Borrow_StreamService, error)
-	PingPong(ctx context.Context, opts ...client.CallOption) (Borrow_PingPongService, error)
+	Borrow(ctx context.Context, in *Borrow_Request, opts ...client.CallOption) (*Response, error)
+	Return(ctx context.Context, in *Returns_Request, opts ...client.CallOption) (*Response, error)
+	ToOther(ctx context.Context, in *ToOtherRequest, opts ...client.CallOption) (*Response, error)
 }
 
 type borrowService struct {
@@ -59,8 +59,8 @@ func NewBorrowService(name string, c client.Client) BorrowService {
 	}
 }
 
-func (c *borrowService) Call(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
-	req := c.c.NewRequest(c.name, "Borrow.Call", in)
+func (c *borrowService) Borrow(ctx context.Context, in *Borrow_Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Borrow.Borrow", in)
 	out := new(Response)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
@@ -69,119 +69,39 @@ func (c *borrowService) Call(ctx context.Context, in *Request, opts ...client.Ca
 	return out, nil
 }
 
-func (c *borrowService) Stream(ctx context.Context, in *StreamingRequest, opts ...client.CallOption) (Borrow_StreamService, error) {
-	req := c.c.NewRequest(c.name, "Borrow.Stream", &StreamingRequest{})
-	stream, err := c.c.Stream(ctx, req, opts...)
+func (c *borrowService) Return(ctx context.Context, in *Returns_Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Borrow.Return", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	if err := stream.Send(in); err != nil {
-		return nil, err
-	}
-	return &borrowServiceStream{stream}, nil
+	return out, nil
 }
 
-type Borrow_StreamService interface {
-	Context() context.Context
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Recv() (*StreamingResponse, error)
-}
-
-type borrowServiceStream struct {
-	stream client.Stream
-}
-
-func (x *borrowServiceStream) Close() error {
-	return x.stream.Close()
-}
-
-func (x *borrowServiceStream) Context() context.Context {
-	return x.stream.Context()
-}
-
-func (x *borrowServiceStream) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *borrowServiceStream) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *borrowServiceStream) Recv() (*StreamingResponse, error) {
-	m := new(StreamingResponse)
-	err := x.stream.Recv(m)
+func (c *borrowService) ToOther(ctx context.Context, in *ToOtherRequest, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Borrow.ToOther", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	return m, nil
-}
-
-func (c *borrowService) PingPong(ctx context.Context, opts ...client.CallOption) (Borrow_PingPongService, error) {
-	req := c.c.NewRequest(c.name, "Borrow.PingPong", &Ping{})
-	stream, err := c.c.Stream(ctx, req, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return &borrowServicePingPong{stream}, nil
-}
-
-type Borrow_PingPongService interface {
-	Context() context.Context
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Send(*Ping) error
-	Recv() (*Pong, error)
-}
-
-type borrowServicePingPong struct {
-	stream client.Stream
-}
-
-func (x *borrowServicePingPong) Close() error {
-	return x.stream.Close()
-}
-
-func (x *borrowServicePingPong) Context() context.Context {
-	return x.stream.Context()
-}
-
-func (x *borrowServicePingPong) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *borrowServicePingPong) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *borrowServicePingPong) Send(m *Ping) error {
-	return x.stream.Send(m)
-}
-
-func (x *borrowServicePingPong) Recv() (*Pong, error) {
-	m := new(Pong)
-	err := x.stream.Recv(m)
-	if err != nil {
-		return nil, err
-	}
-	return m, nil
+	return out, nil
 }
 
 // Server API for Borrow service
 
 type BorrowHandler interface {
-	Call(context.Context, *Request, *Response) error
-	Stream(context.Context, *StreamingRequest, Borrow_StreamStream) error
-	PingPong(context.Context, Borrow_PingPongStream) error
+	Borrow(context.Context, *Borrow_Request, *Response) error
+	Return(context.Context, *Returns_Request, *Response) error
+	ToOther(context.Context, *ToOtherRequest, *Response) error
 }
 
 func RegisterBorrowHandler(s server.Server, hdlr BorrowHandler, opts ...server.HandlerOption) error {
 	type borrow interface {
-		Call(ctx context.Context, in *Request, out *Response) error
-		Stream(ctx context.Context, stream server.Stream) error
-		PingPong(ctx context.Context, stream server.Stream) error
+		Borrow(ctx context.Context, in *Borrow_Request, out *Response) error
+		Return(ctx context.Context, in *Returns_Request, out *Response) error
+		ToOther(ctx context.Context, in *ToOtherRequest, out *Response) error
 	}
 	type Borrow struct {
 		borrow
@@ -194,91 +114,14 @@ type borrowHandler struct {
 	BorrowHandler
 }
 
-func (h *borrowHandler) Call(ctx context.Context, in *Request, out *Response) error {
-	return h.BorrowHandler.Call(ctx, in, out)
+func (h *borrowHandler) Borrow(ctx context.Context, in *Borrow_Request, out *Response) error {
+	return h.BorrowHandler.Borrow(ctx, in, out)
 }
 
-func (h *borrowHandler) Stream(ctx context.Context, stream server.Stream) error {
-	m := new(StreamingRequest)
-	if err := stream.Recv(m); err != nil {
-		return err
-	}
-	return h.BorrowHandler.Stream(ctx, m, &borrowStreamStream{stream})
+func (h *borrowHandler) Return(ctx context.Context, in *Returns_Request, out *Response) error {
+	return h.BorrowHandler.Return(ctx, in, out)
 }
 
-type Borrow_StreamStream interface {
-	Context() context.Context
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Send(*StreamingResponse) error
-}
-
-type borrowStreamStream struct {
-	stream server.Stream
-}
-
-func (x *borrowStreamStream) Close() error {
-	return x.stream.Close()
-}
-
-func (x *borrowStreamStream) Context() context.Context {
-	return x.stream.Context()
-}
-
-func (x *borrowStreamStream) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *borrowStreamStream) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *borrowStreamStream) Send(m *StreamingResponse) error {
-	return x.stream.Send(m)
-}
-
-func (h *borrowHandler) PingPong(ctx context.Context, stream server.Stream) error {
-	return h.BorrowHandler.PingPong(ctx, &borrowPingPongStream{stream})
-}
-
-type Borrow_PingPongStream interface {
-	Context() context.Context
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Send(*Pong) error
-	Recv() (*Ping, error)
-}
-
-type borrowPingPongStream struct {
-	stream server.Stream
-}
-
-func (x *borrowPingPongStream) Close() error {
-	return x.stream.Close()
-}
-
-func (x *borrowPingPongStream) Context() context.Context {
-	return x.stream.Context()
-}
-
-func (x *borrowPingPongStream) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *borrowPingPongStream) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *borrowPingPongStream) Send(m *Pong) error {
-	return x.stream.Send(m)
-}
-
-func (x *borrowPingPongStream) Recv() (*Ping, error) {
-	m := new(Ping)
-	if err := x.stream.Recv(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+func (h *borrowHandler) ToOther(ctx context.Context, in *ToOtherRequest, out *Response) error {
+	return h.BorrowHandler.ToOther(ctx, in, out)
 }

@@ -33,32 +33,39 @@ var _ context.Context
 var _ client.Option
 var _ server.Option
 
-// Api Endpoints for WorkApi service
+// Api Endpoints for Workers service
 
-func NewWorkApiEndpoints() []*api.Endpoint {
+func NewWorkersEndpoints() []*api.Endpoint {
 	return []*api.Endpoint{}
 }
 
-// Client API for WorkApi service
+// Client API for Workers service
 
-type WorkApiService interface {
+type WorkersService interface {
+	CreateWorker(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	UpdateWorker(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	DeleteWorkerByID(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	FindWorkerByID(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	FindWorkerByName(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	FindWorkerByNums(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	//rpc CreateToken(Request)	returns(Response);
 	FindAll(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
 }
 
-type workApiService struct {
+type workersService struct {
 	c    client.Client
 	name string
 }
 
-func NewWorkApiService(name string, c client.Client) WorkApiService {
-	return &workApiService{
+func NewWorkersService(name string, c client.Client) WorkersService {
+	return &workersService{
 		c:    c,
 		name: name,
 	}
 }
 
-func (c *workApiService) FindAll(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
-	req := c.c.NewRequest(c.name, "WorkApi.FindAll", in)
+func (c *workersService) CreateWorker(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Workers.CreateWorker", in)
 	out := new(Response)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
@@ -67,27 +74,124 @@ func (c *workApiService) FindAll(ctx context.Context, in *Request, opts ...clien
 	return out, nil
 }
 
-// Server API for WorkApi service
+func (c *workersService) UpdateWorker(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Workers.UpdateWorker", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
 
-type WorkApiHandler interface {
+func (c *workersService) DeleteWorkerByID(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Workers.DeleteWorkerByID", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workersService) FindWorkerByID(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Workers.FindWorkerByID", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workersService) FindWorkerByName(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Workers.FindWorkerByName", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workersService) FindWorkerByNums(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Workers.FindWorkerByNums", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workersService) FindAll(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Workers.FindAll", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// Server API for Workers service
+
+type WorkersHandler interface {
+	CreateWorker(context.Context, *Request, *Response) error
+	UpdateWorker(context.Context, *Request, *Response) error
+	DeleteWorkerByID(context.Context, *Request, *Response) error
+	FindWorkerByID(context.Context, *Request, *Response) error
+	FindWorkerByName(context.Context, *Request, *Response) error
+	FindWorkerByNums(context.Context, *Request, *Response) error
+	//rpc CreateToken(Request)	returns(Response);
 	FindAll(context.Context, *Request, *Response) error
 }
 
-func RegisterWorkApiHandler(s server.Server, hdlr WorkApiHandler, opts ...server.HandlerOption) error {
-	type workApi interface {
+func RegisterWorkersHandler(s server.Server, hdlr WorkersHandler, opts ...server.HandlerOption) error {
+	type workers interface {
+		CreateWorker(ctx context.Context, in *Request, out *Response) error
+		UpdateWorker(ctx context.Context, in *Request, out *Response) error
+		DeleteWorkerByID(ctx context.Context, in *Request, out *Response) error
+		FindWorkerByID(ctx context.Context, in *Request, out *Response) error
+		FindWorkerByName(ctx context.Context, in *Request, out *Response) error
+		FindWorkerByNums(ctx context.Context, in *Request, out *Response) error
 		FindAll(ctx context.Context, in *Request, out *Response) error
 	}
-	type WorkApi struct {
-		workApi
+	type Workers struct {
+		workers
 	}
-	h := &workApiHandler{hdlr}
-	return s.Handle(s.NewHandler(&WorkApi{h}, opts...))
+	h := &workersHandler{hdlr}
+	return s.Handle(s.NewHandler(&Workers{h}, opts...))
 }
 
-type workApiHandler struct {
-	WorkApiHandler
+type workersHandler struct {
+	WorkersHandler
 }
 
-func (h *workApiHandler) FindAll(ctx context.Context, in *Request, out *Response) error {
-	return h.WorkApiHandler.FindAll(ctx, in, out)
+func (h *workersHandler) CreateWorker(ctx context.Context, in *Request, out *Response) error {
+	return h.WorkersHandler.CreateWorker(ctx, in, out)
+}
+
+func (h *workersHandler) UpdateWorker(ctx context.Context, in *Request, out *Response) error {
+	return h.WorkersHandler.UpdateWorker(ctx, in, out)
+}
+
+func (h *workersHandler) DeleteWorkerByID(ctx context.Context, in *Request, out *Response) error {
+	return h.WorkersHandler.DeleteWorkerByID(ctx, in, out)
+}
+
+func (h *workersHandler) FindWorkerByID(ctx context.Context, in *Request, out *Response) error {
+	return h.WorkersHandler.FindWorkerByID(ctx, in, out)
+}
+
+func (h *workersHandler) FindWorkerByName(ctx context.Context, in *Request, out *Response) error {
+	return h.WorkersHandler.FindWorkerByName(ctx, in, out)
+}
+
+func (h *workersHandler) FindWorkerByNums(ctx context.Context, in *Request, out *Response) error {
+	return h.WorkersHandler.FindWorkerByNums(ctx, in, out)
+}
+
+func (h *workersHandler) FindAll(ctx context.Context, in *Request, out *Response) error {
+	return h.WorkersHandler.FindAll(ctx, in, out)
 }

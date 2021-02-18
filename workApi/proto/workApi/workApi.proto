@@ -1,7 +1,24 @@
 syntax = "proto3";
 package go.micro.api.workApi;
-service WorkApi{
+/*
+	rpc CreateWorker(Request_Workers)returns(Response_CreateWorker);
+	rpc UpdateWorker(Request_Workers)returns(Response_CreateWorker);
+	rpc DeleteWorkerByID(Request_Workers_ID)returns(Response_Workers);
+	rpc FindWorkerByID(Request_Workers_ID)returns(Response_Worker_Show);
+	rpc FindWorkerByName(Request_Workers_Name)returns(Response_Workers_Show);
+	rpc FindAll(Request_Null)returns(Response_Workers_Show);
+	rpc CreateToken(LoginRequest)returns(LoginResponse);
+*/
+service Workers{
+	rpc CreateWorker(Request)	returns(Response);
+	rpc UpdateWorker(Request)	returns(Response);
+	rpc DeleteWorkerByID(Request)	returns(Response);
+	rpc FindWorkerByID(Request)	returns(Response);
+	rpc FindWorkerByName(Request)	returns(Response);
+	rpc FindWorkerByNums(Request)	returns(Response);
+	//rpc CreateToken(Request)	returns(Response);
 	rpc FindAll(Request)	returns(Response);
+
 }
 message Pair{
 	string key = 1;

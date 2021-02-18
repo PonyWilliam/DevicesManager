@@ -59,8 +59,10 @@ type WorksService interface {
 	UpdateWorker(ctx context.Context, in *Request_Workers, opts ...client.CallOption) (*Response_CreateWorker, error)
 	DeleteWorkerByID(ctx context.Context, in *Request_Workers_ID, opts ...client.CallOption) (*Response_Workers, error)
 	FindWorkerByID(ctx context.Context, in *Request_Workers_ID, opts ...client.CallOption) (*Response_Worker_Show, error)
+	FindWorkerByNums(ctx context.Context, in *Request_Workers_Nums, opts ...client.CallOption) (*Response_Worker_Show, error)
 	FindWorkerByName(ctx context.Context, in *Request_Workers_Name, opts ...client.CallOption) (*Response_Workers_Show, error)
 	FindAll(ctx context.Context, in *Request_Null, opts ...client.CallOption) (*Response_Workers_Show, error)
+	CheckSum(ctx context.Context, in *LoginRequest, opts ...client.CallOption) (*LoginResponse, error)
 }
 
 type worksService struct {
@@ -115,6 +117,16 @@ func (c *worksService) FindWorkerByID(ctx context.Context, in *Request_Workers_I
 	return out, nil
 }
 
+func (c *worksService) FindWorkerByNums(ctx context.Context, in *Request_Workers_Nums, opts ...client.CallOption) (*Response_Worker_Show, error) {
+	req := c.c.NewRequest(c.name, "Works.FindWorkerByNums", in)
+	out := new(Response_Worker_Show)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *worksService) FindWorkerByName(ctx context.Context, in *Request_Workers_Name, opts ...client.CallOption) (*Response_Workers_Show, error) {
 	req := c.c.NewRequest(c.name, "Works.FindWorkerByName", in)
 	out := new(Response_Workers_Show)
@@ -135,6 +147,16 @@ func (c *worksService) FindAll(ctx context.Context, in *Request_Null, opts ...cl
 	return out, nil
 }
 
+func (c *worksService) CheckSum(ctx context.Context, in *LoginRequest, opts ...client.CallOption) (*LoginResponse, error) {
+	req := c.c.NewRequest(c.name, "Works.CheckSum", in)
+	out := new(LoginResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for Works service
 
 type WorksHandler interface {
@@ -142,8 +164,10 @@ type WorksHandler interface {
 	UpdateWorker(context.Context, *Request_Workers, *Response_CreateWorker) error
 	DeleteWorkerByID(context.Context, *Request_Workers_ID, *Response_Workers) error
 	FindWorkerByID(context.Context, *Request_Workers_ID, *Response_Worker_Show) error
+	FindWorkerByNums(context.Context, *Request_Workers_Nums, *Response_Worker_Show) error
 	FindWorkerByName(context.Context, *Request_Workers_Name, *Response_Workers_Show) error
 	FindAll(context.Context, *Request_Null, *Response_Workers_Show) error
+	CheckSum(context.Context, *LoginRequest, *LoginResponse) error
 }
 
 func RegisterWorksHandler(s server.Server, hdlr WorksHandler, opts ...server.HandlerOption) error {
@@ -152,8 +176,10 @@ func RegisterWorksHandler(s server.Server, hdlr WorksHandler, opts ...server.Han
 		UpdateWorker(ctx context.Context, in *Request_Workers, out *Response_CreateWorker) error
 		DeleteWorkerByID(ctx context.Context, in *Request_Workers_ID, out *Response_Workers) error
 		FindWorkerByID(ctx context.Context, in *Request_Workers_ID, out *Response_Worker_Show) error
+		FindWorkerByNums(ctx context.Context, in *Request_Workers_Nums, out *Response_Worker_Show) error
 		FindWorkerByName(ctx context.Context, in *Request_Workers_Name, out *Response_Workers_Show) error
 		FindAll(ctx context.Context, in *Request_Null, out *Response_Workers_Show) error
+		CheckSum(ctx context.Context, in *LoginRequest, out *LoginResponse) error
 	}
 	type Works struct {
 		works
@@ -182,10 +208,18 @@ func (h *worksHandler) FindWorkerByID(ctx context.Context, in *Request_Workers_I
 	return h.WorksHandler.FindWorkerByID(ctx, in, out)
 }
 
+func (h *worksHandler) FindWorkerByNums(ctx context.Context, in *Request_Workers_Nums, out *Response_Worker_Show) error {
+	return h.WorksHandler.FindWorkerByNums(ctx, in, out)
+}
+
 func (h *worksHandler) FindWorkerByName(ctx context.Context, in *Request_Workers_Name, out *Response_Workers_Show) error {
 	return h.WorksHandler.FindWorkerByName(ctx, in, out)
 }
 
 func (h *worksHandler) FindAll(ctx context.Context, in *Request_Null, out *Response_Workers_Show) error {
 	return h.WorksHandler.FindAll(ctx, in, out)
+}
+
+func (h *worksHandler) CheckSum(ctx context.Context, in *LoginRequest, out *LoginResponse) error {
+	return h.WorksHandler.CheckSum(ctx, in, out)
 }

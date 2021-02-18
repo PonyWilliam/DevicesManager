@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	goworkerservices "github.com/PonyWilliam/go-works/proto"
+	gowork "github.com/PonyWilliam/go-works/proto"
 	"github.com/afex/hystrix-go/hystrix"
 	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-micro/v2/client"
@@ -14,29 +14,30 @@ import (
 	"net"
 	"net/http"
 	"time"
+	//"net"
+	//"net/http"
+	//"time"
 	"workApi/handler"
-	workApi "workApi/proto/workApi"
 )
 
 func main() {
 	consul := consul2.NewRegistry(
-		func(options *registry.Options) {
-			options.Timeout = time.Second * 10
-			options.Addrs = []string{"127.0.0.1:8500"}
-		},
-	)
+	  func(options *registry.Options) {
+	   options.Timeout = time.Second * 10
+	   options.Addrs = []string{"127.0.0.1:8500"}
+	  },
+	 )
 	hystrixStreamHandler := hystrix.NewStreamHandler()//创建熔断器
 	hystrixStreamHandler.Start()
-	 go func() {
-	 	err := http.ListenAndServe(net.JoinHostPort("0.0.0.0","9096"),hystrixStreamHandler)
-	 	if err!=nil{
-	 		log.Error(err)
+	go func() {
+		err := http.ListenAndServe(net.JoinHostPort("0.0.0.0","9096"),hystrixStreamHandler)
+		if err!=nil{
+			log.Error(err)
 		}
-	 }()
+	}()
 	services := micro.NewService(
-		micro.Name("go.mirco.api.workApi"),
-		micro.Version("latest"),
-		micro.Address("0.0.0.0:8085"),
+		micro.Name("go.micro.api.works"),
+		micro.Version("hello"),
 		micro.Registry(consul),
 		//添加熔断
 		micro.WrapClient(NewClientHystrixWrapper()),
@@ -45,11 +46,8 @@ func main() {
 
 	)
 	services.Init()
-	workerServices := goworkerservices.NewWorksService("go.micro.service.works",services.Client())
-	if err:=workApi.RegisterWorkApiHandler(services.Server(),&handler.WorkApi{WorksServices: workerServices});err!=nil{
-		log.Error(err)
-	}
-
+	_ = services.Server().Handle(
+		services.Server().NewHandler(&handler.Workers{Client: gowork.NewWorksService("go.micro.service.works", services.Client())}))
 
 	if err:= services.Run();err!=nil{
 		log.Error(err)

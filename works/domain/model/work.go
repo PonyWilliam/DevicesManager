@@ -11,4 +11,6 @@ type Workers struct {
 	Mail string `json:"mail"`
 	Description string `json:"description"`//补充描述
 	ISWork bool `json:"is_work"`//是否在职
+	Username string `json:"user_name"`
+	Password string `json:"password"`
 }

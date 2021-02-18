@@ -1,8 +1,8 @@
 package server
 
 import (
-	"works/domain/model"
-	"works/domain/repository"
+	"github.com/PonyWilliam/go-works/domain/model"
+	"github.com/PonyWilliam/go-works/domain/repository"
 )
 
 type IWorkerServices interface {
@@ -10,8 +10,10 @@ type IWorkerServices interface {
 	UpdateWorker(worker *model.Workers) (int64,error)
 	DeleteWorkerByID(int64) error
 	FindWorkerByID(int64)(model.Workers,error)
+	FindWorkerByNums(int64)(model.Workers,error)
 	FindWorkersByName(string)([]model.Workers,error)
 	FindAll()([]model.Workers,error)
+	CheckSum(string,string) bool
 }
 func NewWorkerServices(worker repository.IWorker)IWorkerServices{
 	return &WorkServices{worker}
@@ -32,9 +34,15 @@ func(w *WorkServices) DeleteWorkerByID(id int64) error{
 func(w *WorkServices) FindWorkerByID(id int64)(model.Workers,error){
 	return w.worker.FindWorkerByID(id)
 }
+func(w *WorkServices) FindWorkerByNums(nums int64)(model.Workers,error){
+	return w.worker.FindWorkerByNums(nums)
+}
 func(w *WorkServices) FindWorkersByName(name string)([]model.Workers,error){
 	return w.worker.FindWorkersByName(name)
 }
 func(w *WorkServices) FindAll()([]model.Workers,error){
 	return w.worker.FindAll()
+}
+func(w *WorkServices)CheckSum(username string,password string)bool{
+	return w.worker.CheckSum(username,password)
 }
